@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -16,12 +17,18 @@ public class Main {
     static WebDriver driver = new ChromeDriver();
 
     @BeforeTest
-    public void beforeTest() {
+    public void setUp() {
 
         driver.get("https://the-internet.herokuapp.com/");
         System.out.println("Title is : " + driver.getTitle());
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
+    }
 
+    @AfterClass
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
     }
 
     @Test
