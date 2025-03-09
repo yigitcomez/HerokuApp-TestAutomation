@@ -23,7 +23,10 @@ jobs:
           java-version: '11'
 
       - name: 📦 Maven Bağımlılıklarını Yükle
-        run: mvn clean install --no-transfer-progress
+        run: |
+          cd HerokuApp-TestAutomation
+          mvn clean install --no-transfer-progress
+      
 
       - name: 🖥️ Chrome ve ChromeDriver Kurulumu
         run: |
