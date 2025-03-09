@@ -15,6 +15,12 @@ jobs:
     steps:
       - name: 🚀 Depoyu Klonla
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 📂 Klasör Yapısını Kontrol Et
+        run: ls -R
+
 
       - name: 🔧 Java Kurulumu
         uses: actions/setup-java@v3
@@ -23,9 +29,7 @@ jobs:
           java-version: '11'
 
       - name: 📦 Maven Bağımlılıklarını Yükle
-        run: |
-          cd HerokuApp-TestAutomation
-          mvn clean install --no-transfer-progress
+        run: mvn clean install --no-transfer-progress
       
 
       - name: 🖥️ Chrome ve ChromeDriver Kurulumu
