@@ -40,7 +40,7 @@ jobs:
 
       - name: 📄 Test Sonuçlarını Paylaş (Opsiyonel)
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Test-Reports
           path: target/surefire-reports/
