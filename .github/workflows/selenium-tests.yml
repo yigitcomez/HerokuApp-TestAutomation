@@ -41,9 +41,15 @@ jobs:
           sudo apt-get install -y google-chrome-stable
           CHROME_VERSION=$(google-chrome-stable --version | awk '{print $3}' | cut -d '.' -f 1)
           DRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")
+          if [ -z "$DRIVER_VERSION" ]; then
+            echo "ChromeDriver sürümü bulunamadı, en son sürüm indiriliyor."
+            DRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE")
+          fi
+          echo "ChromeDriver sürümü: $DRIVER_VERSION"
           wget "https://chromedriver.storage.googleapis.com/$DRIVER_VERSION/chromedriver_linux64.zip"
           unzip chromedriver_linux64.zip
           sudo mv chromedriver /usr/local/bin/
+          chmod +x /usr/local/bin/chromedriver
           chromedriver --version
 
       - name: 🏃 Selenium Testlerini Çalıştır
