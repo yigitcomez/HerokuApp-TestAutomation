@@ -31,7 +31,7 @@ jobs:
 
       - name: 📦 Maven Bağımlılıklarını Yükle
         run: mvn clean install --no-transfer-progress
-        working-directory: repo
+        working-directory: ${{ github.workspace }}/./repo/SeleniumAutomation
       
 
       - name: 🖥️ Chrome ve ChromeDriver Kurulumu
