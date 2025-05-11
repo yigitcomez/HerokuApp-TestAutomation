@@ -1,5 +1,6 @@
 package org.example;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,10 +15,14 @@ import java.time.Duration;
 import java.util.List;
 
 public class Main {
-    static WebDriver driver = new ChromeDriver();
+
+    static WebDriver driver;
 
     @BeforeTest
     public void setUp() {
+        // WebDriverManager ile doğru ChromeDriver sürümünü belirtmek
+        WebDriverManager.chromedriver().driverVersion("134.0.6998.45").setup();
+        driver = new ChromeDriver();
 
         driver.get("https://the-internet.herokuapp.com/");
         System.out.println("Title is : " + driver.getTitle());
@@ -33,58 +38,35 @@ public class Main {
 
     @Test
     public void failingTest() {
-        // Test başarısız
-        assert false; // Bu test her zaman başarısız olacak
+        assert false;
     }
 
     @Test
     public void skippedTest() {
-        throw new RuntimeException("Atlanmış test örneği"); // Bu test bir hata fırlatarak atlanacak
+        throw new RuntimeException("Atlanmış test örneği");
     }
 
     @Test(testName = "AddElement Page Test")
-    public static void AddElementTest() throws InterruptedException {
-
-
+    public void AddElementTest() throws InterruptedException {
         driver.findElement(By.xpath("//*[@id=\"content\"]/ul/li[2]/a")).click();
 
-        //click mora than 1 times
         for (int i = 0; i < 2; i++) {
-            //click the button
             driver.findElement(By.xpath("//*[@id=\"content\"]/div/button")).click();
-            //wait 2 seconds
             Thread.sleep(2000);
-            //check that data is being generated correctly
         }
 
-//        List<WebElement> deleteElement = (List<WebElement>) driver.findElement(By.cssSelector("#elements > button:nth-child(1)"));
         WebElement deleteElement = driver.findElement(By.cssSelector("#elements > button:nth-child(2)"));
         System.out.println("Delete element's gets are : " + deleteElement.getAccessibleName());
 
-
         List<WebElement> deleteButtons = driver.findElements(By.className("added-manually"));
-        // Bulunan butonların sayısını yazdırma
         System.out.println("Bulunan Delete buton sayısı: " + deleteButtons.size());
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        // Her bir Delete butonuna tıklama
         for (WebElement button : deleteButtons) {
-            // Butonun görünmesini bekleyin
             wait.until(ExpectedConditions.elementToBeClickable(button));
-
-            // Butona tıklama
             button.click();
-
-            // Silme işlemi tamamlandıktan sonra güncellenen elementlerin sayısını almak için yeni bir buton listesi almak isteyebilirsiniz
             deleteButtons = driver.findElements(By.className("added-manually"));
             System.out.println("Kalan Delete buton sayısı: " + deleteButtons.size());
         }
-
-
-//        Boolean visible = driver.findElement(By.xpath("//*[@id=\"elements\"]/button")).isDisplayed();
-//        if (visible)
-//            driver.quit();
-
-
     }
 }

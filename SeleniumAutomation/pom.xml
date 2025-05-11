@@ -35,7 +35,11 @@
             <version>${testng.version}</version> <!-- TestNG bağımlılığı -->
             <!--            <scope>test</scope> &lt;!&ndash; Test bağımlılığı olarak tanımlıyoruz &ndash;&gt;-->
         </dependency>
-
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.2.0</version> <!-- Versiyonu kontrol edin -->
+        </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
