@@ -5,7 +5,7 @@ import org.example.utils.NavigationHelper;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ChallengingDomTest extends tests.BaseTest {
+public class ChallengingDomTest extends BaseTest {
 
     @Test
     public void testChallengingDomPage() {
