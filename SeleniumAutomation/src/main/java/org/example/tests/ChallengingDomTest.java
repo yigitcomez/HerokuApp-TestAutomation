@@ -16,6 +16,9 @@ public class ChallengingDomTest extends tests.BaseTest {
 
         Assert.assertTrue(page.isTableDisplayed());
         page.clickFirstButton();
+
+        String cellText = page.getCellData(1, 1);
+        Assert.assertFalse(cellText.isEmpty());
     }
 
 }
