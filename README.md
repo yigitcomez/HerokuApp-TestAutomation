@@ -9,10 +9,10 @@ Bu proje, [HerokuApp](https://the-internet.herokuapp.com/) üzerindeki test sena
 - **Maven** (Bağımlılık yönetimi için)
 
 ## 🚀 Kurulum ve Çalıştırma
-1. **Projeyi klonlayın:**
+1. **Projeyi klonlayın ve SeleniumAutomation klasörüne gidin:**
    ```bash
    git clone https://github.com/yigitcomez/HerokuApp-TestAutomation.git
-   cd HerokuApp-TestAutomation
+   cd HerokuApp-TestAutomation/SeleniumAutomation
    ```
 2. **Bağımlılıkları yükleyin:**
    ```bash
