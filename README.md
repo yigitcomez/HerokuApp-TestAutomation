@@ -28,11 +28,11 @@ Bu projeyi çalıştırabilmek için aşağıdaki yazılımların kurulu olması
    ```
 2. **Bağımlılıkları yükleyin:**
    ```bash
-   mvn clean install
+   ./mvnw clean install
    ```
 3. **Testleri çalıştırın:**
    ```bash
-   mvn test
+   ./mvnw test
    ```
 
 ## 📄 Test Senaryoları
