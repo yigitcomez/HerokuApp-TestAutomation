@@ -6,7 +6,7 @@ import org.example.utils.NavigationHelper;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class LoginTest extends tests.BaseTest {
+public class LoginTest extends BaseTest {
 
     @Test
     public void testValidLogin() {
