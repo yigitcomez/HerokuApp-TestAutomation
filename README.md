@@ -9,6 +9,18 @@ Bu proje, [HerokuApp](https://the-internet.herokuapp.com/) üzerindeki test sena
 - **Maven** (Bağımlılık yönetimi için)
 
 ## 🚀 Kurulum ve Çalıştırma
+Bu projeyi çalıştırabilmek için aşağıdaki yazılımların kurulu olması gerekir:
+
+- **JDK 20** veya daha güncel bir sürüm
+- **Maven 3.x**
+- **Google Chrome** ya da Chromium tabanlı uyumlu bir tarayıcı
+
+### Gereksinimlerin kurulması
+| Platform | JDK | Maven | Chrome |
+| --- | --- | --- | --- |
+| **Windows/macOS** | [Adoptium](https://adoptium.net/?variant=openjdk20) | [Maven İndir](https://maven.apache.org/download.cgi) | [Google Chrome](https://www.google.com/chrome/) |
+| **Linux** | `sudo apt install openjdk-20-jdk` | `sudo apt install maven` | `sudo apt install google-chrome-stable` |
+
 1. **Projeyi klonlayın:**
    ```bash
    git clone https://github.com/yigitcomez/HerokuApp-TestAutomation.git
