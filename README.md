@@ -40,6 +40,7 @@ Bu projeyi çalıştırabilmek için aşağıdaki yazılımların kurulu olması
 - **Checkbox Test**: Checkbox'ların doğru çalıştığını kontrol etme
 - **Alert Test**: JavaScript uyarı pencereleri testi
 - **File Upload Test**: Dosya yükleme fonksiyonunu doğrulama
+- **Add/Remove Elements Test**: Eleman ekleme ve silme senaryoları
 
 ## 📄 Lisans
 Bu proje **MIT Lisansı** altında lisanslanmıştır.
