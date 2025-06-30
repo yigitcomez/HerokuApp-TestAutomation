@@ -30,6 +30,8 @@ Bu projeyi çalıştırabilmek için aşağıdaki yazılımların kurulu olması
    ```bash
    ./mvnw clean install
    ```
+   Maven wrapper jarı indirilemezse veya ağ erişimi yoksa sistemde kurulu
+   `mvn` komutunu kullanabilirsiniz.
 3. **Testleri çalıştırın:**
    ```bash
    ./mvnw test
