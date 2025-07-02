@@ -42,6 +42,12 @@ Bu projeyi çalıştırabilmek için aşağıdaki yazılımların kurulu olması
 - **File Upload Test**: Dosya yükleme fonksiyonunu doğrulama
 - **Add/Remove Elements Test**: Eleman ekleme ve silme senaryoları
 
+## 🎥 Demo Videosu
+Projenin kullanımına dair kısa videoyu aşağıdaki bağlantıdan izleyebilirsiniz.
+
+[![Kısa Tanıtım](https://img.youtube.com/vi/Vt8a_zDqg_s/0.jpg)](https://www.youtube.com/watch?v=Vt8a_zDqg_s)
+
+
 ## 📄 Lisans
 Bu proje **MIT Lisansı** altında lisanslanmıştır.
 
